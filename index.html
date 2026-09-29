@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatOn | Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-utensils"></i>
+            <span>EatOn</span>
+        </div>
+
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            Deliver to:
+            <strong>Civil Lines, Allahabad</strong>
+        </div>
+
+        <div class="nav-right">
+
+            <button id="loginBtn">
+                Login
+            </button>
+
+            <button id="cartBtn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>Order Food Online</h1>
+
+        <p>Fresh Food Delivered Across Civil Lines, Allahabad</p>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search restaurants or dishes..."
+        >
+
+    </section>
+
+    <!-- ================= CATEGORY ================= -->
+
+    <section class="categories">
+
+        <button class="category">All</button>
+        <button class="category">Pizza</button>
+        <button class="category">Biryani</button>
+        <button class="category">Chinese</button>
+        <button class="category">Desserts</button>
+
+    </section>
+
+    <!-- ================= FILTER ================= -->
+
+    <section class="filters">
+
+        <select id="sortSelect">
+            <option value="">Sort By</option>
+            <option value="rating">Rating</option>
+            <option value="delivery">Delivery Time</option>
+            <option value="price">Price</option>
+        </select>
+
+        <label>
+            <input type="checkbox" id="vegOnly">
+            Pure Veg
+        </label>
+
+    </section>
+
+    <!-- ================= RESTAURANTS ================= -->
+
+    <section id="homePage">
+
+        <h2>Popular Restaurants</h2>
+
+        <div id="restaurantContainer" class="restaurant-grid">
+
+        </div>
+
+    </section>
+
+    <!-- ================= RESTAURANT PAGE ================= -->
+
+    <section id="restaurantPage" class="hidden">
+
+        <button id="backHome">
+            ← Back
+        </button>
+
+        <div id="restaurantDetails">
+
+        </div>
+
+        <div id="menuContainer">
+
+        </div>
+
+    </section>
+
+    <!-- ================= CART ================= -->
+
+    <section id="cartPage" class="hidden">
+
+        <h2>Your Cart</h2>
+
+        <div id="cartItems">
+
+        </div>
+
+        <div class="bill">
+
+            <p>
+                Item Total
+                <span id="itemTotal">₹0</span>
+            </p>
+
+            <p>
+                Delivery Fee
+                <span>₹40</span>
+            </p>
+
+            <p>
+                Taxes
+                <span>₹25</span>
+            </p>
+
+            <p>
+                Discount
+                <span id="discount">-₹0</span>
+            </p>
+
+            <hr>
+
+            <h3>
+                Grand Total
+                <span id="grandTotal">₹0</span>
+            </h3>
+
+            <input
+                type="text"
+                id="couponInput"
+                placeholder="Coupon Code"
+            >
+
+            <button id="applyCoupon">
+                Apply Coupon
+            </button>
+
+            <button id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <section id="checkoutPage" class="hidden">
+
+        <h2>Checkout</h2>
+
+        <textarea
+            id="address"
+            rows="4"
+            placeholder="Enter Delivery Address"
+        ></textarea>
+
+        <button id="placeOrder">
+            Place Order
+        </button>
+
+    </section>
+
+    <!-- ================= LOGIN ================= -->
+
+    <div id="loginModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <span id="closeLogin">&times;</span>
+
+            <h2>Login / Signup</h2>
+
+            <input
+                type="text"
+                placeholder="Email or Phone"
+            >
+
+            <button>
+                Send OTP
+            </button>
+
+            <input
+                type="text"
+                placeholder="Enter OTP"
+            >
+
+            <button>
+                Verify
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= ORDER SUCCESS ================= -->
+
+    <section id="successPage" class="hidden">
+
+        <h1>🎉 Order Placed Successfully</h1>
+
+        <button id="trackOrder">
+            Track Order
+        </button>
+
+    </section>
+
+    <!-- ================= TRACKING ================= -->
+
+    <section id="trackingPage" class="hidden">
+
+        <h2>Track Your Order</h2>
+
+        <ul class="tracking">
+
+            <li class="active">
+                ✔ Order Placed
+            </li>
+
+            <li class="active">
+                👨‍🍳 Preparing
+            </li>
+
+            <li>
+                🛵 Out for Delivery
+            </li>
+
+            <li>
+                📦 Delivered
+            </li>
+
+        </ul>
+
+        <h3>
+            Estimated Delivery Time:
+            30 mins
+        </h3>
+
+    </section>
+
+    <!-- ================= FLOATING CART ================= -->
+
+    
+    <button id="floatingCart">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span id="floatingCount">
+            0
+        </span>
+
+    </button>
+    <div id="cartContainer">
+
+    <h2>🛒 Your Cart</h2>
+
+    <p>Your cart is empty.</p>
+
+</div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>EatOn</h3>
+
+        <p>
+            Delivering happiness in Civil Lines, Allahabad.
+        </p>
+
+        <p>
+            © 2026 EatOn. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="mock-data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
